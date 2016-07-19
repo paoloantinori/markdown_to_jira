@@ -9,4 +9,7 @@ https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/context-menu#Sel
 https://developer.mozilla.org/en-US/Add-ons/SDK/Guides/Content_Scripts  
 
 ##### Note
-Based on http://j2m.fokkezb.nl/
+Based on:
+
+- http://j2m.fokkezb.nl/
+- http://markdown-here.com/
