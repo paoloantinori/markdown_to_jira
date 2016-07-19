@@ -1,0 +1,16 @@
+{
+  "title": "Markdown to JIRA",
+  "name": "markdown_to_jira",
+  "version": "0.0.1",
+  "description": "A right click menu entry to automatically convert Markdown syntax in JIRA's Markup",
+  "main": "index.js",
+  "author": "Paolo Antinori",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
