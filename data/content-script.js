@@ -79,7 +79,13 @@ self.on("click", function (node, data) {
   // this is for gmail messages
     // find cursor position
   var elem = unsafeWindow.JIRA.Issue.CommentForm.getField()[0];
-  elem.value = J2M.toJ(elem.value);
+
+  if("MD to JIRA" === data){
+    elem.value = J2M.toJ(elem.value);
+  } else{
+    elem.value = J2M.toM(elem.value);
+  }
+  
 
 
   found.focus();

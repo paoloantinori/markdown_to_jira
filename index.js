@@ -7,9 +7,6 @@ function Entry(label){
   this.label = label;
   this.data = label;
   this.context =  cm.SelectorContext("textarea, div, input");
-  this.contentScriptFile = ["./content-script.js", data.url("J2M.js")];
-  this.contentScriptWhen = "end";
-
 }
 
 // represents a submenu
@@ -25,9 +22,14 @@ function SubMenu(label, arrEntries){
   }(arrEntries);
 } 
 
-cm.Item({
-  label: "MD to JIRA",
+cm.Menu({
+  label: "JIRA Formatting",
   contentScriptFile: ["./content-script.js", data.url("J2M.js")],
+  contentScriptWhen: "end",
+  items: [ 
+  cm.Item( new Entry("MD to JIRA") ),
+  cm.Item( new Entry("JIRA to MD") ),
+  ],
   context: cm.SelectorContext("textarea, div, input")
 });
 
