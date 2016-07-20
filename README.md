@@ -36,3 +36,7 @@ https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_Started_%28jpm
 https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/context-menu#SelectionContext()  
 https://developer.mozilla.org/en-US/Add-ons/SDK/Guides/Content_Scripts  
 
+
+##### Screenshot
+
+![Screenshot](/screenshot.png?raw=true "Screenshot")
