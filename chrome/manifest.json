@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Markdown to JIRA Plugin",
+  "description": "Converts Markdown to JIRA wiki syntax",
+  "version": "0.0.3",
+  "permissions": ["contextMenus"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+     {
+       "matches": [
+        "file://*",
+        "http://*.jboss.org/*", "https://*.jboss.org/*",
+        "http://*.apache.org/*", "https://*.apache.org/*",
+        "http://*.jira.com/*", "https://*.jira.com/*",
+        "http://*.atlassian.com/*", "https://*.atlassian.com/*"
+        ],
+       "js": [
+         "lib/J2M.js",
+         "lib/content-script.js"
+         ]
+     }
+   ]
+}
