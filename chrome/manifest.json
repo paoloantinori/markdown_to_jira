@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Markdown to JIRA Plugin",
+  "name": "Markdown to JIRA",
   "description": "Converts Markdown to JIRA wiki syntax",
   "version": "0.0.3",
   "permissions": ["contextMenus"],
