@@ -24,9 +24,9 @@ function requestHandler(request, sender, sendResponse) {
       return false;
     }
     if(request.event == "MD to JIRA"){
-      elem.innerHTML = J2M.toJ(elem.innerHTML);
+      elem.value = J2M.toJ(elem.value);
     } else{
-      elem.innerHTML = J2M.toM(elem.innerHTML);
+      elem.value = J2M.toM(elem.value);
     }
 }
 chrome.extension.onMessage.addListener(requestHandler);
