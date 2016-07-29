@@ -1,4 +1,9 @@
-Markdown to JIRA is just a tiny wrapper around [J2M](http://j2m.fokkezb.nl/), a javascript library that converts Markdown to JIRA markup (and the other way around) that does all the work.  
+[Firefox Extension](https://chrome.google.com/webstore/detail/jjmmhbaklhogjgcccbmhfllhmfdamagg/publish-accepted?authuser=1)  
+[Chrome Extension](https://addons.mozilla.org/en-US/firefox/addon/markdown-to-jira/?src=cb-dl-created)  
+
+-----------------------------
+
+**Markdown to JIRA** is just a tiny wrapper around [J2M](http://j2m.fokkezb.nl/), a javascript library that converts Markdown to JIRA markup (and the other way around) that does all the work.  
 It's inspired by the much more powerful [Markdown Here](http://markdown-here.com/) extension, that converts Markdown to HTML (I use it for Gmail).
 
 This extension adds an entry to your right-click menu, called `JIRA Formatting` that expands further in 2 entries:
