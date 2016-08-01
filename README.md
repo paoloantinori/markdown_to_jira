@@ -1,5 +1,5 @@
-[Firefox Extension](https://chrome.google.com/webstore/detail/jjmmhbaklhogjgcccbmhfllhmfdamagg/publish-accepted?authuser=1)  
-[Chrome Extension](https://addons.mozilla.org/en-US/firefox/addon/markdown-to-jira/?src=cb-dl-created)  
+[Chrome Extension](https://chrome.google.com/webstore/detail/jjmmhbaklhogjgcccbmhfllhmfdamagg)  
+[Firefox Extension](https://addons.mozilla.org/en-US/firefox/addon/markdown-to-jira/?src=cb-dl-created)  
 
 -----------------------------
 
