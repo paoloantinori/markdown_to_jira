@@ -20,6 +20,7 @@ To keep it not intrusive, I have configured it to appear only on the following d
 - `*.apache.org`
 - `*.jira.com`
 - `*.atlassian.com`
+- `*.atlassian.net`
 
 You are encouraged to fork the extension and adapt it to your needs or to open a pull request if you wish to contribute back.
 
