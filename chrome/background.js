@@ -1,7 +1,8 @@
 var documentUrlPatterns = [ "file:///*", "http://*.jboss.org/*", "https://*.jboss.org/*",
         "http://*.apache.org/*", "https://*.apache.org/*",
         "http://*.jira.com/*", "https://*.jira.com/*",
-        "http://*.atlassian.com/*", "https://*.atlassian.com/*"];
+        "http://*.atlassian.com/*", "https://*.atlassian.com/*",
+        "http://*.atlassian.net/*", "https://*.atlassian.net/*"];
 
 /**
  * Create a context menu which will only show up for images.
