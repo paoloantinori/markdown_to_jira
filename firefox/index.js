@@ -16,7 +16,7 @@ cm.Menu({
   cm.Item( new Entry("JIRA to MD") ),
   ],
   context: [
-    cm.URLContext(["*.jboss.org", "*.apache.org", "*.jira.com", "*.atlassian.com", "*.atlassian.net"]),
+    cm.URLContext(["file://*", "*.jboss.org", "*.apache.org", "*.jira.com", "*.atlassian.com", "*.atlassian.net"]),
     cm.SelectorContext("textarea, div, input")
   ]
 });
