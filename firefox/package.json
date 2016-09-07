@@ -9,6 +9,9 @@
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"
   },
+  "permissions": {
+    "multiprocess": true
+  },
   "license": "MIT",
   "keywords": [
     "markdown", "jira"
@@ -17,5 +20,12 @@
     "https://github.com/FokkeZB/J2M",
     "https://github.com/adam-p/markdown-here/"
   ],
-  "homepage": "https://github.com/paoloantinori/markdown_to_jira"
+  "homepage": "https://github.com/paoloantinori/markdown_to_jira",
+  "preferences": [{
+    "name": "domains",
+    "type": "string",
+    "title": "Enabled domains",
+    "description": "Edit the default value accordingly to your needs. Use | as a separator and * as a wildcard. Restart browser to enable new settings. Ex: *.apache.org|*.jira.com ",
+    "value": "file://*|*.jboss.org|*.apache.org|*.jira.com|*.atlassian.com|*.atlassian.net"
+  }]
 }

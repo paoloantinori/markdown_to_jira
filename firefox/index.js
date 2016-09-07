@@ -1,4 +1,5 @@
 var cm = require("sdk/context-menu");
+var pref = require("sdk/simple-prefs").prefs;
 
 // represent our leaves in the menu
 function Entry(label){ 
@@ -16,7 +17,7 @@ cm.Menu({
   cm.Item( new Entry("JIRA to MD") ),
   ],
   context: [
-    cm.URLContext(["file://*", "*.jboss.org", "*.apache.org", "*.jira.com", "*.atlassian.com", "*.atlassian.net"]),
+    cm.URLContext(pref.domains.split("|")),
     cm.SelectorContext("textarea, div, input")
   ]
 });
