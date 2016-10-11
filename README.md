@@ -14,13 +14,15 @@ This extension adds an entry to your right-click menu, called `JIRA Formatting` 
 When you right click on an issue page on JIRA, and select one of the 2 functionalities, the extension will replace the content with the equivalent markup.
 
 ##### Note
-To keep it not intrusive, I have configured it to appear only on the following domains:
+The extension had been tested on the following the following domains:
 
 - `*.jboss.org`
 - `*.apache.org`
 - `*.jira.com`
 - `*.atlassian.com`
 - `*.atlassian.net`
+
+But you can adjust that list looking inside the extension options. Mind that Firefox and Chrome syntaxes are different, in case you are using both, but the default values should be able to guide you.
 
 You are encouraged to fork the extension and adapt it to your needs or to open a pull request if you wish to contribute back.
 
