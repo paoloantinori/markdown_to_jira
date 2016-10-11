@@ -41,23 +41,22 @@
 	 * @returns {string}
 	 */
 	function toJ(input) {
-
 		// remove sections that shouldn't recursively processed
 		var START = 'J2MBLOCKPLACEHOLDER';
 		var replacementsList = [];
 		var counter = 0;
-
-		input = input.replace(/`{3,}(\w+)?((?:\n|[^`])+)`{3,}/g, function(match, synt, content) {
-			var code = '{code';
-
-			if (synt) {
-				code += ':' + synt;
-			}
-
-			code += '}' + content + '{code}';
-			var key = START + counter++ + '%%';
-			replacementsList.push({key: key, value: code});
-			return key;
+		
+		input = input.replace(/`{3,}(\w+)?((?:\n|.)+?)`{3,}/g, function(match, synt, content) {
+		    var code = '{code';
+		
+		    if (synt) {
+		        code += ':' + synt;
+		    }
+		
+		    code += '}' + content + '{code}';
+		    var key = START + counter++ + '%%';
+		    replacementsList.push({key: key, value: code});
+		    return key;
 		});
 
 		input = input.replace(/^(.*?)\n([=-])+$/gm, function (match,content,level) {
@@ -72,6 +71,14 @@
 			var to = (wrapper.length === 1) ? '_' : '*';
 			return to + content + to;
 		});
+		// Make multi-level bulleted lists work
+  		input = input.replace(/^(\s*)- (.*)$/gm, function (match,level,content) {
+    			var len = 2;
+    			if(level.length > 0) {
+        			len = parseInt(level.length/4.0) + 2;
+    			}
+    			return Array(len).join("-") + ' ' + content;
+  		});
 
 		var map = {
 			cite: '??',
@@ -88,6 +95,7 @@
 		});
 
 		input = input.replace(/~~(.*?)~~/g, '-$1-');
+
 		input = input.replace(/`([^`]+)`/g, '{{$1}}');
 
 		input = input.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '[$1|$2]');
@@ -95,8 +103,8 @@
 
 		// restore extracted sections
 		for(var i =0; i < replacementsList.length; i++){
-			var sub = replacementsList[i];
-			input = input.replace(sub["key"], sub["value"]);
+		    var sub = replacementsList[i];
+		    input = input.replace(sub["key"], sub["value"]);
 		}
 
 		return input;

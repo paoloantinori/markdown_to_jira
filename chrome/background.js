@@ -1,9 +1,10 @@
-var documentUrlPatterns = [ "file:///*", "http://*.jboss.org/*", "https://*.jboss.org/*",
-        "http://*.apache.org/*", "https://*.apache.org/*",
-        "http://*.jira.com/*", "https://*.jira.com/*",
-        "http://*.atlassian.com/*", "https://*.atlassian.com/*",
-        "http://*.atlassian.net/*", "https://*.atlassian.net/*"];
+var documentUrlPatterns = [];
 
+chrome.storage.sync.get("domains", function(items) {
+  if(items.domains.indexOf("|") > 0){
+    documentUrlPatterns = items.domains.split("|");
+  }
+});
 /**
  * Create a context menu which will only show up for images.
  */
