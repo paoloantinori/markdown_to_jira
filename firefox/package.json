@@ -1,5 +1,5 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.8",
   "title": "Markdown to JIRA",
   "name": "markdown_to_jira",
   "description": "A right click menu entry to automatically convert Markdown syntax in JIRA's Markup (and the other way around).",

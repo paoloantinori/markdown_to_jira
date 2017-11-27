@@ -3,7 +3,7 @@
 
   "name": "Markdown to JIRA",
   "description": "Converts Markdown to JIRA wiki syntax",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "permissions": ["contextMenus", "storage", "tabs"],
   "background": {
     "scripts": ["background.js"]
