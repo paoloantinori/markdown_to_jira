@@ -34,16 +34,33 @@ Consider that this was my first time writing an extension, so don't expect great
 - https://github.com/adam-p/markdown-here/
 
 
-##### Dev tips:
-- to run in dev: `jpm run -b /usr/bin/firefox`  
-- to package: `jpm xpi`  
-- to sign: `jpm sign --api-key='XXXXXXXXXXXXXX' --api-secret='XXXXXXXXXXXXXXXX' --xpi   /home/pantinor/md_to_jira/md_to_jira.xpi`
+##### Developers
+This plugin is a [web extension](https://developer.mozilla.org/en-US/Add-ons/WebExtensions)
+that runs with Chrome and Firefox. To work around vendor specific issues,
+[Webpack](https://webpack.js.org/) is used to build the packages.
 
-##### Dev docs:
-https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_Started_%28jpm%29  
-https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/context-menu#SelectionContext()  
-https://developer.mozilla.org/en-US/Add-ons/SDK/Guides/Content_Scripts  
+###### Build
+1. Install [yarn](https://yarnpkg.com/en/)
+1. Run `yarn install`
+1. Run `webpack` to produce the distribution source code (see `dist/`)
 
+###### Development (Firefox)
+Run with `web-ext run` from within `dist/firefox`.
+
+###### Development (Chrome)
+Visit `chrome://extensions` and load `dist/chrome`.
+
+###### Releasing (Firefox)
+1. Run build (see above)
+1. `web-ext sign -s ./dist/firefox --api-key='XXXXXXXXXXXXXX' --api-secret='XXXXXXXXXXXXXXXX'`
+1. Upload the build (see [docs](https://developer.mozilla.org/en-US/Add-ons/Distribution))
+
+###### Releasing (Chrome)
+1. Run build (see above)
+1. Visit `chrome://extensions/`
+1. Use `dist/chrome` as the extension root directory
+1. Add the secret private key to sign
+1. Upload the build (see [docs](https://developer.chrome.com/extensions/packaging))
 
 ##### Screenshot
 

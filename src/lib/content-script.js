@@ -1,5 +1,3 @@
-// Finds and returns the page element that currently has focus. Drills down into
-// iframes if necessary.
 function findFocusedElem(document) {
   var focusedElem = document.activeElement;
 
@@ -18,19 +16,24 @@ function findFocusedElem(document) {
 
   return focusedElem;
 }
-
-self.on("click", function (node, data) {
-  debugger;
-  //unsafeWindow.JIRA.Issue.CommentForm.getField()[0];
-  var elem = node;
-
-  if("MD to JIRA" === data){
-    elem.value = J2M.toJ(elem.value);
-  } else{
-    elem.value = J2M.toM(elem.value);
+// Handle the menu-item click
+function requestHandler(request, sender, sendResponse) {
+  var elem = findFocusedElem(window.document);
+  if (!elem) {
+    // Shouldn't happen. But if it does, just silently abort.
+    return false;
   }
 
-  found.focus();
-  found.scrollTop = scrollPos;
-  return true;
-});
+  switch(request.event) {
+    case "md_to_jira":
+      elem.value = J2M.toJ(elem.value);
+      break;
+    case "jira_to_md":
+      elem.value = J2M.toM(elem.value);
+      break;
+    default:
+      console.warn('Received unknown event ' + request.event);
+  }
+}
+
+BROWSER_SDK.runtime.onMessage.addListener(requestHandler);

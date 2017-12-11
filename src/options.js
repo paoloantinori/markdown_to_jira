@@ -1,7 +1,7 @@
-// Saves options to chrome.storage.sync.
+// Saves options to browser.storage.sync.
 function save_options() {
   var domains = document.getElementById('domains').value;
-  chrome.storage.sync.set({
+  BROWSER_SDK.storage.sync.set({
     domains: domains
   }, function() {
     // Update status to let user know options were saved.
@@ -14,14 +14,14 @@ function save_options() {
 }
 
 // Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
+// stored in browser.storage.
 function restore_options() {
-  chrome.storage.sync.get({
-    domains: 'file://*|*://issues.jboss.org/*|*://*.apache.org/*|*://*.jira.com/*|*://*.atlassian.com/*|*://*.atlassian.net/*'
+  BROWSER_SDK.storage.sync.get({
+    domains: MD_TO_JIRA_DEFAULT_DOMAINS
   }, function(items) {
     document.getElementById('domains').value = items.domains;
   });
 }
+
 document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click',
-    save_options);
+document.getElementById('save').addEventListener('click', save_options);
