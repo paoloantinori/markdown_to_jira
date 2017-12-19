@@ -1,0 +1,22 @@
+{
+  "name": "markdown_to_jira",
+  "version": "1.0.0",
+  "description": "a wrapper around j2m to convert MD to Jira markup (and the other way around)",
+  "repository": "https://github.com/paoloantinori/markdown_to_jira.git",
+  "author": "paoloantinori",
+  "contributors": [
+    "Ben Limmer <hello@benlimmer.com> (https://benlimmer.com)"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack",
+    "dev-firefox": "webpack --watch & web-ext run --source-dir ./dist/firefox --verbose"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.2.3",
+    "lodash": "^4.17.4",
+    "web-ext": "^2.2.2",
+    "webpack": "^3.10.0"
+  }
+}

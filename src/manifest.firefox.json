@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "Markdown to JIRA",
+  "description": "Converts Markdown to JIRA wiki syntax",
+
+  "applications": {
+    "gecko": {
+      "id": "{AB385CE6-CF9E-41EE-B5B9-3224DB64D562}"
+    }
+  },
+
+  "version": "0.1.0",
+  "permissions": ["contextMenus", "storage", "tabs"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "128": "icon_128x128.png"
+  },
+  "content_scripts": [{
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": [
+      "lib/J2M.js",
+      "lib/content-script.js"
+    ]
+  }],
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  }
+}
